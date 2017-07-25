@@ -1,0 +1,56 @@
+@import 'tachyons/scss/media-queries';
+
+.h-15{height: 15%;}
+
+.h4{
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.h5{
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.h6{
+	height: 24rem;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.h7{
+	height: 32rem;
+}
+.h8{
+	height: 48rem;
+}
+.h9{
+	height: 64rem;
+}
+
+@media #{$breakpoint-not-small}{
+	.h6-ns{
+		height: 24rem;
+		margin-top: 0;
+	}
+	.h7-ns{
+		height: 32rem;
+		margin-top: 0;
+	}
+	.h-15-ns{height: 15%;}
+}
+
+@media #{$breakpoint-medium}{
+}
+
+@media #{$breakpoint-large}{
+	.h-15-l{height: 15%;}
+	.h6-l{
+		height: 24rem;
+		margin-top: 0;
+	}
+	.h7-l{
+		height: 32rem;
+		margin-top: 0;
+	}
+}
+

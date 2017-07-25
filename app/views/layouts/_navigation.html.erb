@@ -1,0 +1,35 @@
+<nav class="navbar navbar-default navbar-fixed-top bg-black b--white-30" role="navigation">
+	<div class="navbar-header">
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="sr-only"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<%= link_to image_tag("logo.png"), root_path, class: 'navbar-brand' %>
+	</div>
+	<div class="collapse navbar-collapse">
+		<ul class="nav navbar-nav navbar-right">
+			<li class="bl ph3">
+				<%= link_to "https://www.facebook.com/bandablackmachine/", :target => :_blank, :class => "f2" do %>
+					<i class="ion-social-facebook white"></i>  
+				<% end %>
+			</li>
+			<li class="bl ph3">
+				<%= link_to "https://instagram.com/black_machine", :target => :_blank, :class => "f2" do %>
+					<i class="ion-social-instagram white"></i>  
+				<% end %>
+			</li>
+			<li class="bl ph3">
+				<%= link_to "https://www.youtube.com/channel/UCK86Kf9GxCnFE-BY_7bD73Q", :target => :_blank, :class => "f2" do %>
+					<i class="ion-social-youtube white"></i>  
+				<% end %>
+			</li>
+			<li class="bl ph3">
+				<%= link_to "https://soundcloud.com/bandablackmachine", :target => :_blank, :class => "f2" do %>
+					<i class="ion-speakerphone white"></i>  
+				<% end %>
+			</li>
+		</ul>
+	</div>
+</nav>
