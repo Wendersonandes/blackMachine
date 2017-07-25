@@ -14,3 +14,8 @@
 
 # Ignore application configuration
 /config/application.yml
+
+#Ignore vim backup files
+*.swp
+*.swo
+
