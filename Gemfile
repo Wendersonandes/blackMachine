@@ -35,6 +35,9 @@ gem 'cells-rails'
 #Handle app secrets
 gem 'figaro', '~> 1.0.0'
 
+# Authentication
+gem 'devise'
+
 # Workers
 gem 'sucker_punch', '~> 2.0'
 
