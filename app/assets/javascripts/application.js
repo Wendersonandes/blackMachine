@@ -40,14 +40,14 @@ $(window).on('load', function() {
 	});
 
 	$(videObj).on('ended', function(){
-		$('.play').html("Tocar novament");
+		$('.play').html("Tocar novamente");
 	});
 
 	$('.sound').on('click', function(){
 		$this = $(this)
 		if (videObj.muted == false) {
 			videObj.muted = true;
-			$this.html("Aumentar o som");
+			$this.html("Ativar som");
 		} else {
 			videObj.muted = false
 			$this.html("Retirar o som");
