@@ -17,7 +17,7 @@
 //= require jquery.vide
 //= require_tree .
 
-$(window).on('load', function() {
+$(window).on('turbolinks:load', function() {
 	$('.main_image_wrapper').vide({
 			mp4: "https://s3-sa-east-1.amazonaws.com/blackmachine/Video01.mp4"
 		},
