@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get '/contact' => 'pages#contact', as: 'contact'
   get '/home' => 'pages#home', as: 'home'
   get '/downloads' => 'pages#downloads', as: 'downloads'
+  get '/events' => 'pages#events', as: 'events'
 end
