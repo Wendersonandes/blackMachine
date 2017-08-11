@@ -1,0 +1,23 @@
+<div class="main_image_wrapper w-100 vh-100 cover bg-center" style="background-image: url(<%= asset_path("BlackMachine.jpg")%>);">
+	<div class="w-100 vh-100 bg-black-50" style="background-image: url(<%= asset_path("3px-tile.png")%>);">
+		<div class="w-100 pt6 pt7-l">
+			<%= form_for(@contact, :html => { :class => "w-100 w-70-m w-50-l center pa4"}) do |f| %>
+				<fieldset class="bn ma0 pa0">
+					<legend class="pa0 f2 f1-l tc mb3 white-80">Precisa falar com a gente?</legend>
+					<div class="cf">
+						<%= f.label :email, :class=>"clip", :for=>"email-address" %>
+						<%= f.email_field :email, :class => "f6 f3-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 br2-ns br--left-ns", :placeholder => "Seu melhor email" %>
+						<%= f.label :message_subject, :class=>"clip", :for=>"message-subject" %>
+						<%= f.select :message_subject, [['Dúvidas', 'Dúvidas'], ['Informações sobre apresentações', 'Informações sobre apresentações'], ['Outros', 'Outros']], {},{:class => "f6 f3-l input-reset bn fl black-80 bg-white pa3 mt3 lh-solid w-100 br2-ns br--left-ns"} %>
+						<%= f.text_field :message_subject, :class => "f6 f3-l bn fl black-80 bg-white pa3 mt3 lh-solid w-100 br2-ns br--left-ns", :placeholder => "Assunto da mensagem" %>
+						<%= f.label :message, :class=>"clip", :for=>"email-address" %>
+						<%= f.text_area :message, :rows => 6, :class => "f6 f3-l input-reset bn fl black-80 bg-white pa3 mt3 lh-solid w-100 br2-ns br--left-ns", :placeholder => "Sua mensagem" %>
+
+						<%= f.submit "Enviar mensagem", :class => "f6 f3-l bungee-shade button-reset fl pv3 mt3 tc bg-animate bg-black-80 hover-bg-black white pointer w-100 ba b--near-black br2-ns br--right-ns" %>
+					</div>
+				</fieldset>
+				<span class="white f4">Use o formulário para enviar sua mensagem</span>
+			<% end %>
+		</div>
+	</div>
+</div>

@@ -3,6 +3,17 @@ class PagesController < ApplicationController
 	def home
 	end
 
+	def about
+	end
+	
+	def contact
+    @contact = Contact.new
+    prepare_meta_tags title: "Contato", description: view_context.t(:short_description, scope: :app)
+	end
+
+	def downloads
+	end
+
 
   # Preview html email template
   def email
