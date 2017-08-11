@@ -1,8 +1,8 @@
 <div class="main_image_wrapper w-100 vh-100 cover bg-center" style="background-image: url(<%= asset_path("BlackMachine.jpg")%>);">
 	<div class="w-100 vh-100 bg-black-50" style="background-image: url(<%= asset_path("3px-tile.png")%>);">
-		<div class="w-100 pt6 pt7-l">
-			<%= form_for(@contact, :html => { :class => "w-100 w-70-m w-50-l center pa4"}) do |f| %>
-				<fieldset class="bn ma0 pa0">
+		<div class="w-100 pt7 measure-wide center">
+			<%= form_for(@contact) do |f| %>
+				<fieldset class="bn ma0 pa0 center">
 					<legend class="pa0 f2 f1-l tc mb3 white-80">Precisa falar com a gente?</legend>
 					<div class="cf">
 						<%= f.label :email, :class=>"clip", :for=>"email-address" %>
