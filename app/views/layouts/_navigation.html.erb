@@ -6,10 +6,10 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<%= link_to image_tag("logo.png"), root_path, class: 'navbar-brand' %>
+		<%= link_to image_tag("logo.png"), root_path, class: 'navbar-brand ph5' %>
 	</div>
 	<div class="collapse navbar-collapse">
-		<ul class="nav navbar-nav navbar-right">
+		<ul class="nav navbar-nav navbar-left">
 			<li class="bl ph3">
 				<%= link_to "https://www.facebook.com/bandablackmachine/", :target => :_blank, :class => "f2" do %>
 					<i class="ion-social-facebook white"></i>  
@@ -25,9 +25,32 @@
 					<i class="ion-social-youtube white"></i>  
 				<% end %>
 			</li>
-			<li class="bl ph3">
+			<li class="bl br ph3">
 				<%= link_to "https://soundcloud.com/bandablackmachine", :target => :_blank, :class => "f2" do %>
 					<i class="ion-speakerphone white"></i>  
+				<% end %>
+			</li>
+
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="bl ph3">
+				<%= link_to about_path, :class => "f3" do %>
+					Sobre
+				<% end %>
+			</li>
+			<li class="bl ph3">
+				<%= link_to contact_path, :class => "f3" do %>
+					Contato
+				<% end %>
+			</li>
+			<li class="bl ph3">
+				<%= link_to downloads_path, :class => "f3" do %>
+					Downloads
+				<% end %>
+			</li>
+			<li class="bl ph3">
+				<%= link_to "https://soundcloud.com/bandablackmachine", :class => "f3" do %>
+					Agenda
 				<% end %>
 			</li>
 		</ul>
