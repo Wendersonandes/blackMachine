@@ -2,12 +2,12 @@
 	<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :class => "w-80 w-50-m w-50-l center pa4"}) do |f| %>
 		<%= devise_error_messages! %>
 		<fieldset class="bn ma0 pa0">
-			<legend class="pa0 f3 f2-m f1-ns tc mb3 white-80">Se inscreva em nossa newsletter</legend>
+			<legend class="pa0 f2 tc mb3 white-80 bungee-inline">Se inscreva em nossa newsletter</legend>
 			<div class="cf">
 				<%= f.label :email, :class=>"clip", :for=>"email-address" %>
 				<%= f.email_field :email, :class => "f6 f3-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns" %>
 
-				<%= f.submit "Get up", :class => "f6 f3-l bungee-shade button-reset fl pv3 tc bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l ba b--near-black br2-ns br--right-ns" %>
+				<%= f.submit "Get up", :class => "f6 f3-l bungee-inline button-reset fl pv3 tc bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l ba b--white-50 br2-ns br--right-ns" %>
 			</div>
 
 			<span class="white-80 f4 tc">Receba em seu email conteúdo exclusivo, novidades e a agenda do Black Machine</span>
