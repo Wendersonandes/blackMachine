@@ -1,27 +1,25 @@
-<div class="main_image_wrapper w-100 vh-100 cover bg-center" style="background-image: url(<%= asset_path("BlackMachineBlackout.jpg")%>);">
-	<div class="w-100 vh-100 bg-black-30" style="background-image: url(<%= asset_path("3px-tile.png")%>);">
-		<div class="w-100 pv7 center measure-wide">
-			<div class="center bg-black-30 pa4 f3 white lh-copy">
-				<h1 class="f1 lh-title bungee-shade">We make it funky!</h1>
-				<p>
-					The choice of paper size is one of the  first of any given work to be printed. There are two basic paper size systems in the world: the international A sizes, and the American sizes.
-				</p>
-				<p>
-					These are the basic DIN sizes in mm. for : A0, 841x1189 - A1, 594x841 -
-					A2, 420x594 - A3, 297x420 - A4, 210x297 - A5, 148x210 - A6, 105 x148 -
-					A7, 74x 105 - A8, 52x74 - A9, 37x52 - A10, 26x37.
-				</p>
-				<p>
-					The A4 is the basic size for stationary. Two thirds of it is a square,
-					a nice economical happenstance resulting from the golden rectangle.
-					It is one of the reasons we tend to use as much
-					as possible the DIN sizes: proportions are always leading to other nice proportions.
-				</p>
-				<p>
-					This does not happen with the American basic size which leads to nothing. I counted 28 different standard sizes in USA!. The only reason we use it is because everybody in USA uses it, all stationary in USA is that size, so are manilla folders,  les and of ce equipment!
-					The repercussion of ugliness is endless.
-				</p>
-			</div>
-		</div>
-	</div>
+<% content = "
+<div class=\"center bg-black-30 pa4 f3 white lh-copy\">
+	<h1 class=\"f1 lh-title bungee-inline\">We make it funky!</h1>
+	<p>
+		The choice of paper size is one of the  first of any given work to be printed. There are two basic paper size systems in the world: the international A sizes, and the American sizes.
+	</p>
+	<p>
+		These are the basic DIN sizes in mm. for : A0, 841x1189 - A1, 594x841 -
+		A2, 420x594 - A3, 297x420 - A4, 210x297 - A5, 148x210 - A6, 105 x148 -
+		A7, 74x 105 - A8, 52x74 - A9, 37x52 - A10, 26x37.
+	</p>
+	<p>
+		The A4 is the basic size for stationary. Two thirds of it is a square,
+		a nice economical happenstance resulting from the golden rectangle.
+		It is one of the reasons we tend to use as much
+		as possible the DIN sizes: proportions are always leading to other nice proportions.
+	</p>
+	<p>
+		This does not happen with the American basic size which leads to nothing. I counted 28 different standard sizes in USA!. The only reason we use it is because everybody in USA uses it, all stationary in USA is that size, so are manilla folders,  les and of ce equipment!
+		The repercussion of ugliness is endless.
+	</p>
 </div>
+"
+%>
+<%= cell(WrapperCell,nil, :context => {:hero_image => "BlackMachineBlackout.jpg", :content => content}) %>
