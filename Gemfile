@@ -41,18 +41,23 @@ gem 'devise'
 # Workers
 gem 'sucker_punch', '~> 2.0'
 
+#Upload Handle
+gem 'fastimage'
+gem 'image_processing'
+gem 'mini_magick'
+gem 'shrine'
+gem 'aws-sdk', '~> 2.1'
+gem 'roda'
+gem 'remotipart', '~> 1.2'
+gem 'jquery-fileupload-rails'
+
+
 # Email
 gem 'gibbon', github: "amro/gibbon"
 gem 'sendgrid', '~> 1.2', '>= 1.2.4'
 gem 'mail_form', '~> 1.5.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'activeadmin', '~> 1.1'
 
 group :development do
   # Docs
