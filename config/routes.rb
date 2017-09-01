@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+	mount Admin::Engine, at: "admin", :as => "admin"
 	devise_for :users, controllers: {
 		:registrations => 'users/registrations'
 	}  
@@ -14,7 +13,18 @@ Rails.application.routes.draw do
 		end
 	end
 
+	#Shrine uploader endpoints
+  mount FileUploader::UploadEndpoint, at: "/attachments/file"
+	mount FeaturedImageUploader::UploadEndpoint, :at => "/attachments/featured_image"
+	mount ImageUploader::UploadEndpoint, :at => "/attachments/image"
+
   resources :contacts, only: [:new, :create]
+	resources :galleries do
+		resources :images
+	end
+
+	resources :images
+
 	# Static pages
   match '/error' => 'pages#error', via: [:get, :post], as: 'error_page'
   get '/about' => 'pages#about', as: 'about'
