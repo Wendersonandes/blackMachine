@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824223028) do
+ActiveRecord::Schema.define(version: 20170825163627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,26 @@ ActiveRecord::Schema.define(version: 20170824223028) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
+  create_table "active_admin_gallery_images", force: :cascade do |t|
+    t.integer "imageable_id"
+    t.string  "imageable_type"
+    t.string  "imageable_relation"
+    t.string  "alt"
+    t.string  "title"
+    t.string  "image_name"
+    t.string  "image_uid"
+    t.integer "position"
+    t.integer "image_width"
+    t.integer "image_height"
+    t.float   "image_aspect_ratio"
+    t.integer "image_depth"
+    t.string  "image_format"
+    t.string  "image_mime_type"
+    t.string  "image_size"
+  end
+
+  add_index "active_admin_gallery_images", ["imageable_id", "imageable_type", "imageable_relation"], name: "active_admin_gallery_images_imageable", using: :btree
+
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -48,6 +68,24 @@ ActiveRecord::Schema.define(version: 20170824223028) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "galleries", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "file_data"
+    t.integer  "gallery_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "images", ["gallery_id"], name: "index_images_on_gallery_id", using: :btree
 
   create_table "pages", force: :cascade do |t|
     t.text     "content"
@@ -75,4 +113,5 @@ ActiveRecord::Schema.define(version: 20170824223028) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "images", "galleries"
 end
