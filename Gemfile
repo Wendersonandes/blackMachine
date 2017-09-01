@@ -18,8 +18,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+
+gem 'active_model_serializers', '~> 0.10.5'
+
+gem 'handlebars_assets', '~> 0.23.2'
 
 #SEO stuff
 gem 'meta-tags'
@@ -57,8 +59,6 @@ gem 'gibbon', github: "amro/gibbon"
 gem 'sendgrid', '~> 1.2', '>= 1.2.4'
 gem 'mail_form', '~> 1.5.0'
 
-gem 'activeadmin', '~> 1.1'
-
 group :development do
   # Docs
   gem 'sdoc', require: false    # bundle exec rake doc:rails
@@ -87,4 +87,4 @@ group :development, :test do
   # Logging
   gem 'quiet_assets'
 end
-
+gem "admin", path: "admin"
