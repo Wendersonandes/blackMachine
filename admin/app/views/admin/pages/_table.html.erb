@@ -1,0 +1,42 @@
+<div id="table" class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <caption class="hide">
+      <%= @resource_class.model_name.human(count: 2) %>
+    </caption>
+    <thead>
+      <tr>
+        <% if @resource_service.include_batch_actions? %>
+          <th></th>
+        <% end %>
+        <% @resource_service.attrs_for_index.each do |attr| %>
+          <th class="column-<%= attr %>">
+            <%= column_header attr %>
+          </th>
+        <% end %>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @resources.each do |resource| %>
+        <tr data-resource-id="<%= resource.id %>" class="<%= "highlight" if flash[:updated_ids] && flash[:updated_ids].include?(resource.id) %>">
+          <% if @resource_service.include_batch_actions? %>
+            <td align="center" data-behavior="batch-actions-checkbox-container">
+              <%= check_box_tag "batch_action[items][#{resource.id}]", nil, nil,
+                data: { behavior: "batch-actions-checkbox" } %>
+            </td>
+          <% end %>
+					<td>
+						<%= resource.title %>
+					</td>
+					<td>
+						<%= image_tag(resource.featured_image_url(:thumb), size: "100", :class => "img-thumbnail") %>
+					</td>
+
+          <td>
+            <%= render partial: "#{controller_path}/columns/actions", locals: { resource: resource } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

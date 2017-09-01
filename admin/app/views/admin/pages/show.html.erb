@@ -1,0 +1,17 @@
+<%= render partial: "breadcrumb" %>
+
+<table class="table">
+	<tr>
+		<th>Title</th>
+		<td><%= @resource.title %></td>
+	</tr>
+	<tr>
+		<th>Content</th>
+		<td><%= @resource.content %></td>
+	</tr>
+	<tr>
+		<th>Featured image</th>
+		<td><%= image_tag(@resource.featured_image_url(:thumb), size: "100", :class => "img-thumbnail") %> </td>
+	</tr>
+
+</table>

@@ -1,0 +1,33 @@
+<div id="breadcrumb">
+  <ol class="breadcrumb">
+    <% if @resource_parents %>
+      <% @resource_parents.each do |parent| %>
+        <li>
+          <%= link_to parent.class.model_name.human(count: 2), parent.class %>
+        </li>
+        <li>
+          <%= link_to parent.to_s, parent %>
+        </li>
+      <% end %>
+    <% end %>
+    <% if action_name == "index" %>
+      <li class="active">
+        <%= @resource_class.model_name.human(count: 2) %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to @resource_class.model_name.human(count: 2), [*@resource_parents, @resource_class] %>
+      </li>
+      <li class="active">
+        <% if @resource.new_record? %>
+          <%= t("helpers.submit.create", model: @resource_class.model_name.human) %>
+        <% else %>
+          <%= @resource.title %>
+        <% end %>
+      </li>
+      <% if @resource.persisted? %>
+        <%= render partial: "breadcrumb_actions" %>
+      <% end %>
+    <% end %>
+  </ol>
+</div>

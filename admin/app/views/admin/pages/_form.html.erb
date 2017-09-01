@@ -1,0 +1,18 @@
+<%= form_for @resource do |f| %>
+	<div class="well bg-black">
+		<%= f.text_field :title %>
+	</div>
+
+	<div class="well">
+		<%= f.text_area :content, :rows => 10 %>
+	</div>
+
+	<div class="well">
+		<%= f.file_field :featured_image  %>
+	</div>
+
+	<div class="pull-right">
+		<%= link_to 'Cancelar', 'javascript:history.go(-1);', :class => "btn btn-default" %>
+		<%= f.submit %>
+	</div>
+<% end %>

@@ -1,0 +1,12 @@
+//= require moment
+//= require moment/en-gb
+//= require godmin
+//= require turbolinks
+//= require handlebars.runtime
+//= require jquery-fileupload/vendor/jquery.ui.widget
+//= require jquery-fileupload/jquery.iframe-transport
+//= require jquery-fileupload/jquery.fileupload
+//= require admin/gallery/uploader
+//= require_tree ./templates/
+//= require_tree ./utils/
+//= require_tree .

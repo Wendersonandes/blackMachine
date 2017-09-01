@@ -1,0 +1,8 @@
+<div class="row">
+	<div class="col-md-12" id="previewimagegallery">
+		<% @resource.images.each do |image| %>
+			<div class="col-md-3 h5 thumbnail cover" style="background:url(<%= image.file_url(:thumb) %>) no-repeat center;">
+			</div>
+		<% end %>
+	</div>
+</div>

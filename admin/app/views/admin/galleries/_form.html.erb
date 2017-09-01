@@ -1,0 +1,21 @@
+<%= form_for(@resource, :html => {:class => ""}) do |f| %>
+	<div class="row relative">
+		<div class="col-md-8">
+			<div class="well bg-black">
+				<%= f.text_field :title %>
+			</div>
+			<div class="well">
+				<%= f.text_area :description, :rows => 10 %>
+			</div>
+		</div>
+		<div class="col-md-4 ba b--dashed bw3 relative h-100">
+			<%= render partial: "dnd" %>
+		</div>
+	</div>
+
+	<div class="pull-right">
+		<%= link_to 'Cancelar', 'javascript:history.go(-1);', :class => "btn btn-default" %>
+		<%= f.submit %>
+	</div>
+<% end %>
+
