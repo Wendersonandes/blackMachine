@@ -14,8 +14,8 @@ $(document).on('turbolinks:load', function() {
 		},
 		done: function(e, data) {
 
-			var gallery = document.getElementById("previewimagegallery");
-			var el = document.getElementById("gallery_uploader_container");
+			var gallery = document.getElementById("previewImageGallery");
+			var el = document.getElementById("galleryUploaderContainer");
 			var image = {
 				id: /cache\/(.+)/.exec(data.formData.key)[1], // we have to remove the prefix part
 				storage: 'cache',
