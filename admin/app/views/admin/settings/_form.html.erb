@@ -1,0 +1,25 @@
+<%= form_for @setting, url: setting_path do |f| %>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="well">
+				<%= f.text_field :site_name %>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="well">
+				<%= f.text_field :email_contact %>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="well">
+				<%= f.text_area :site_meta_keywords %>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="well">
+				<%= f.text_field :site_description %>
+			</div>
+		</div>
+
+	</div>
+<% end %>
