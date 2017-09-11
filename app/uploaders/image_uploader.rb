@@ -21,9 +21,10 @@ class ImageUploader < Shrine
   def process(io, context)
     case context[:phase]
     when :store
+      display = resize_to_limit!(io.download,1200,800)
       thumb = resize_to_limit!(io.download,250,300)
       email_thumb = resize_to_fill!(io.download,240,160)
-      { original: io, thumb: thumb, email_thumb: email_thumb }
+      { :original => io, :display => display, :thumb => thumb, :email_thumb => email_thumb }
     end
   end
 end
