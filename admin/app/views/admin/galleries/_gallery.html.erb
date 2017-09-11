@@ -1,7 +1,11 @@
 <div class="row">
-	<div class="col-md-12" id="previewimagegallery">
+	<div class="col-md-12" id="previewImageGallery">
 		<% @resource.images.each do |image| %>
-			<div class="col-md-3 h5 thumbnail cover" style="background:url(<%= image.file_url(:thumb) %>) no-repeat center;">
+			<div class="col-md-2 h5 ma1 relative thumbnail cover" style="background:url(<%= image.file_url(:thumb) %>) no-repeat center;">
+				<div class="absolute bottom-1 right-1">
+					<span>Edit</span>
+					<span>Delete</span>
+				</div>
 			</div>
 		<% end %>
 	</div>

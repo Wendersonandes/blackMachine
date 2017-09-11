@@ -1,15 +1,19 @@
 <%= form_for(@resource, :html => {:class => ""}) do |f| %>
 	<div class="row relative">
 		<div class="col-md-8">
-			<div class="well bg-black">
+			<div class="well">
 				<%= f.text_field :title %>
 			</div>
 			<div class="well">
 				<%= f.text_area :description, :rows => 10 %>
 			</div>
 		</div>
-		<div class="col-md-4 ba b--dashed bw3 relative h-100">
-			<%= render partial: "dnd" %>
+		<div class="col-md-4 bottom-0 absolute">
+			<div class="well">
+				<div class="ba b--dashed bw3 relative h-100">
+					<%= render partial: "dnd" %>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -18,4 +22,3 @@
 		<%= f.submit %>
 	</div>
 <% end %>
-
