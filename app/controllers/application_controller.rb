@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 	before_action :prepare_meta_tags, if: "request.get?"
 
-
- def prepare_meta_tags(options={})
-    site        = "Black Machine"
+	def prepare_meta_tags(options={})
+		setting = Setting.first
+		site        = setting.site_name
     title       = [controller_name, action_name].join(" ")
-    description = "Brazilian Soul Band"
+		description = setting.site_description
     current_url = request.url
 
     # Let's prepare a nice set of defaults
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
       title:       title,
       description: description,
 			icon: [{:href => view_context.asset_url('favicon.ico'), :type => 'image/png'}],
-      keywords:    %w[arte contemporaneo artista editais edital residencia visual editais premios oportunidades artes plásticas salões bolsa],
+			keywords:    setting.site_meta_keywords,
 
       og:          {url: current_url,
                     site_name: site,
@@ -27,11 +27,8 @@ class ApplicationController < ActionController::Base
                     type: 'website'}
     }
 
-
     options.reverse_merge!(defaults)
-
-
     set_meta_tags options
-
   end
+
 end
