@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170825163627) do
+ActiveRecord::Schema.define(version: 20170908205414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,13 @@ ActiveRecord::Schema.define(version: 20170825163627) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "events", force: :cascade do |t|
+    t.datetime "start"
+    t.text     "description"
+    t.string   "url_ticket"
+    t.string   "title"
+  end
+
   create_table "galleries", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -93,6 +100,13 @@ ActiveRecord::Schema.define(version: 20170825163627) do
     t.text     "featured_image_data"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string "email_contact"
+    t.string "site_name"
+    t.string "site_description"
+    t.text   "site_meta_keywords"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,3 +1,9 @@
 <%= navbar_item Page %>
 <%= navbar_item Gallery %>
 <%= navbar_item Image %>
+<%= navbar_item Setting %>
+<%= navbar_item Event %>
+<li>
+  <%= link_to('Logout', main_app.destroy_admin_user_session_path, method: :delete) %>        
+</li>
+<%= navbar_item User %>
