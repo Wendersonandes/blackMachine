@@ -1,0 +1,24 @@
+<div class="col-md-6">
+	<div class="panel panel-default">
+		<div class="panel-heading">Adicionar nova galeria de fotos</div>
+		<div class="panel-body">
+			<%= form_for(@gallery, :html => {:class => ""}) do |f| %>
+				<div class="row ">
+					<div class="col-md-12">
+						<div class="well well-sm">
+							<%= f.text_field :title %>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="well well-sm">
+							<%= f.text_area :description, :rows => 5 %>
+						</div>
+					</div>
+				</div>
+				<div class="pull-right">
+					<%= f.submit "Save and Edit" %>
+				</div>
+			<% end %>
+		</div>
+	</div>	
+</div>
