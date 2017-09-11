@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
 
 	def prepare_meta_tags(options={})
 		setting = Setting.first
-		site        = setting.site_name
+		site        = setting.site_name ||= ""
     title       = [controller_name, action_name].join(" ")
-		description = setting.site_description
+		description = setting.site_description ||= ""
     current_url = request.url
 
     # Let's prepare a nice set of defaults
