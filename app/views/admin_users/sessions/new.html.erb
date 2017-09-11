@@ -1,0 +1,20 @@
+<div class="image_background relative w-100 vh-100-l bg-top cover bg-black" style="background-image: url(<%= asset_path("BlackMachineBlackout.jpg") %>);">
+	<div class="wrapper w-100 vh-100-l bg-black-80 pb6 pb0-ns">
+		<div class="container pt6">
+			<div class="col-md-7 light-silver hidden-xs">
+			</div>
+			<div class="col-md-5 light-silver">
+				<%= simple_form_for resource, as: resource_name, url: session_path(resource_name), :validate => true do |f| %>
+					<% if devise_mapping.rememberable? %>
+						<%= f.input :remember_me, as: :hidden, input_html: {value: true} %>
+					<% end %>
+					<%= f.input :email, :hint => false, autofocus: true, :validate => true %>
+					<%= f.input :password, required: true, autocomplete: 'off' %>
+					<%= f.button :submit, class: 'button button-rounded button-primary w-100' %>
+				<% end %>
+				<%= render 'admin_users/shared/links' %>
+			</div>
+		</div>
+	</div>
+</div>
+
