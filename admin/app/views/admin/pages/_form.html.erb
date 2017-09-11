@@ -1,14 +1,19 @@
 <%= form_for @resource do |f| %>
-	<div class="well bg-black">
-		<%= f.text_field :title %>
-	</div>
-
-	<div class="well">
-		<%= f.text_area :content, :rows => 10 %>
-	</div>
-
-	<div class="well">
-		<%= f.file_field :featured_image  %>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="well">
+				<%= f.text_field :title %>
+			</div>
+			<div class="well">
+				<%= f.text_area :content, :rows => 10 %>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="well">
+				<%= f.file_field :featured_image  %>
+				<%= image_tag(@resource.featured_image_url(:thumb), :class => "thumbnail", :size => "100") %>
+			</div>
+		</div>
 	</div>
 
 	<div class="pull-right">
