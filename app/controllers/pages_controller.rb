@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
 	def home
 		@user = User.new
+		prepare_meta_tags
 	end
 
 	def about
@@ -13,6 +14,15 @@ class PagesController < ApplicationController
 	end
 
 	def downloads
+	end
+
+	def events
+		@event = Event.last
+		@events = Event.all
+	end
+
+	def media
+		@galleries = Gallery.all
 	end
 
 
