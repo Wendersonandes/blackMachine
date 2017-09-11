@@ -1,20 +1,13 @@
 <div class="main_image_wrapper w-100 vh-100 cover center" style="background-image: url(<%= asset_path("BlackMachineCineOp0001.jpg")%>);">
 	<div class="w-100 vh-100 bg-black-50" style="background-image: url(<%= asset_path("3px-tile.png")%>);">
 		<div class="w-100 pv7 center measure-wide">
-			<div class="center bg-black-30 pa4 f3 white">
-				<div class="w-50 fl">
-					<h1 class="f2 lh-title bungee-inline">Black Machine ao vivo no 104</h1>
-				</div>
-				<div class="w-50 fl">
-					<p class="f4">Banda Black Machine em mais um super baile|show no Café 104, com destaque para o lançamento do videoclipe de "Ver Brilhar", que é a música do lado B do recém lançado EP, compacto vinil 7 polegadas. 
-					</p>
-				</div>
-				
-				<%= link_to "https://www.sympla.com.br/black-machine-ao-vivo-no-104---novo-videoclipe__171547", :class => "f3 f2-l bungee-inline button-reset fl pv4 mt3 tc bg-animate bg-black-60 hover-bg-black white pointer w-100 ba b--white-50 br2-ns br--right-ns" do %>
-						Comprar Ingresso
-					<span class="glyphicon glyphicon-hand-right"></span>
-				<% end %>
-			</div>
+			<h1 class="f1 white ph4 lh-title bungee-inline">Eventos próximos</h1>
+			<%= cell(EventsCell, @event).(:item) %>
 		</div>
+		<div class="w-100 center measure-wide">
+			<h2 class="f2 white ph4 lh-title bungee-inline bb b--white-50">Eventos anteriores</h2>
+			<%= cell(EventsCell, :collection => @events) %>
+		</div>
+
 	</div>
 </div>

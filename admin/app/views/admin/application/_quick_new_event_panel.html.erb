@@ -1,0 +1,31 @@
+<div class="col-md-6">
+	<div class="panel panel-default">
+		<div class="panel-heading">Adicionar novo evento</div>
+		<div class="panel-body">
+			<%= form_for(@event, :html => {:class => ""}) do |f| %>
+				<div class="row ">
+					<div class="col-md-6">
+						<div class="well well-sm">
+							<%= f.text_field :url_ticket %>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="well well-sm">
+							<%= f.datetime_field :start %>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="well well-sm">
+							<%= f.text_area :description, :rows => 5 %>
+						</div>
+					</div>
+				</div>
+
+				<div class="pull-right">
+					<%= f.submit %>
+					<%= f.submit "Save and Edit" %>
+				</div>
+			<% end %>
+		</div>
+	</div>	
+</div>
