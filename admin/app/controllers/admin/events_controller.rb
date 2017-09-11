@@ -11,6 +11,10 @@ module Admin
 				if @event.save
 					redirect_to edit_event_path(@event)
 				end
+			else
+				if @event.save
+					redirect_to edit_event_path(@event)
+				end
 			end
 		end
 

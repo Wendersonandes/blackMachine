@@ -11,6 +11,10 @@ module Admin
 				if @gallery.save
 					redirect_to edit_gallery_path(@gallery)
 				end
+			else
+				if @gallery.save
+					redirect_to edit_gallery_path(@gallery)
+				end
 			end
 		end
 
