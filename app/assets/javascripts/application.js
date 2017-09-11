@@ -18,8 +18,15 @@
 //= require masonry.pkgd.min
 //= require imagesloaded.pkgd.min
 //= require vide
+//= require slick
+//= require slick-lightbox
 //= require gallery
 
 //= require_tree .
 
-
+var slickLightbox = function(){
+	$('.gallery').slickLightbox({
+    lazy: true
+  });
+};
+$(document).on("turbolinks:load", slickLightbox);
