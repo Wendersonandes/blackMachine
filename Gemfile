@@ -21,6 +21,7 @@ gem 'turbolinks'
 
 gem 'active_model_serializers', '~> 0.10.5'
 
+gem 'simple_form'
 gem 'handlebars_assets', '~> 0.23.2'
 
 #SEO stuff
@@ -34,9 +35,9 @@ gem 'ionicons-rails'
 gem 'trailblazer-cells'
 gem 'cells-erb'
 gem 'cells-rails'
+
 #Handle app secrets
 gem 'figaro', '~> 1.0.0'
-
 # Authentication
 gem 'devise'
 
