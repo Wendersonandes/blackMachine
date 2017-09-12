@@ -1,0 +1,17 @@
+<%= form_for(@contact, :remote => true) do |f| %>
+	<fieldset class="bn ma0 pa0 center">
+		<legend class="pa0 f2 tc mb3 white-80 bungee-inline">Precisa falar com a gente?</legend>
+		<div class="cf">
+			<%= f.label :email, :class=>"clip", :for=>"email-address" %>
+			<%= f.email_field :email, :class => "f6 f3-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 br2-ns br--left-ns", :placeholder => "Seu melhor email" %>
+			<%= f.label :message_subject, :class=>"clip", :for=>"message-subject" %>
+			<%= f.select :message_subject, [['Dúvidas', 'Dúvidas'], ['Informações sobre apresentações', 'Informações sobre apresentações'], ['Outros', 'Outros']], {},{:class => "f6 f3-l input-reset bn fl black-80 bg-white pa3 mt3 lh-solid w-100 br2-ns br--left-ns"} %>
+			<%= f.text_field :name, :class => "f6 f3-l bn fl black-80 bg-white pa3 mt3 lh-solid w-100 br2-ns br--left-ns", :placeholder => "Seu nome" %>
+			<%= f.label :message, :class=>"clip", :for=>"email-address" %>
+			<%= f.text_area :message, :rows => 6, :class => "f6 f3-l input-reset bn fl black-80 bg-white pa3 mt3 lh-solid w-100 br2-ns br--left-ns", :placeholder => "Sua mensagem" %>
+
+			<%= f.submit "Enviar mensagem", :class => "f6 f3-l bungee-inline button-reset fl pv3 mt3 tc bg-animate bg-black-60 hover-bg-black white pointer w-100 ba b--white-50 br2-ns br--right-ns" %>
+		</div>
+	</fieldset>
+	<span class="white f4">Use o formulário para enviar sua mensagem</span>
+<% end %>

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 	end
 
 	resources :images
+  resources :contacts, only: [:new, :create]
 
 	# Static pages
   match '/error' => 'pages#error', :via => [:get, :post], :as => 'error_page'
